@@ -18,7 +18,7 @@ def main():
     server = socket.create_server(("localhost", 9092), reuse_port=True)
     connection, address = server.accept() # wait for client
 
-    corelation_id = str(ctypes.c_uint32(uuid4().int).value)
+    corelation_id = str(ctypes.c_uint32(7).value)
     print(f"Corelation ID: {corelation_id}")
     message_size = len(corelation_id)
     message = f"{message_size}\r\n{corelation_id}"
